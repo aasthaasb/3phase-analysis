@@ -1,6 +1,6 @@
 import numpy as np
 import streamlit as st
-import matplotlib.pyplot as plt
+
 
 
 
@@ -50,25 +50,6 @@ connection_type = st.selectbox('Connection Type', ['Y-Y', 'Y-D', 'D-Y', 'D-D'])
 # Simulate the system
 simulation_results = simulate_system(connection_type, phase_voltage, phase_current, resistance, inductance, capacitance)
 
-# Plot phase voltage vs. line voltage
-st.write('**Phase Voltage vs. Line Voltage Plot:**')
-plt.figure(figsize=(8, 4))
-plt.plot(['Phase Voltage', 'Line Voltage'], [phase_voltage, simulation_results['Line Voltage']], marker='o')
-plt.xlabel('Voltage Type')
-plt.ylabel('Voltage')
-plt.title('Phase Voltage vs. Line Voltage')
-plt.grid(True)
-st.pyplot(plt)
-
-# Plot phase current vs. line current
-st.write('**Phase Current vs. Line Current Plot:**')
-plt.figure(figsize=(8, 4))
-plt.plot(['Phase Current', 'Line Current'], [phase_current, simulation_results['Line Current']], marker='o')
-plt.xlabel('Current Type')
-plt.ylabel('Current')
-plt.title('Phase Current vs. Line Current')
-plt.grid(True)
-st.pyplot(plt)
 
 # Display advantages of three-phase current
 st.write('**Advantages of Three-Phase Current:**')
@@ -85,6 +66,10 @@ for adv in advantages:
         query = "+".join(adv.split())
         search_url = f"https://www.google.com/search?q={query}+academic+papers"
         st.markdown(f"[{adv}]({search_url})")
+
+
+
+
 
 
 
