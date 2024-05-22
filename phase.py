@@ -1,3 +1,4 @@
+import numpy as np
 import streamlit as st
 
 # Function for simulation and analysis
