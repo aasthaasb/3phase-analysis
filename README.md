@@ -21,6 +21,7 @@ Usage :1. Run the Streamlit app:
  streamlit run app.py
 
 2.Open the provided URL in your web browser to access the simulator.
+https://3phase-analysis-asb.streamlit.app/
 
 3.Configure the three-phase system by selecting the connection type and adjusting the input sliders.
 
