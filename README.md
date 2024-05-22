@@ -11,12 +11,13 @@ Features:
 Installation
 -Clone this repository to your local machine:
 git clone https://github.com/your_username/three-phase-system-simulator.git
+
 -Navigate to the project directory:
 cd three-phase-system-simulator
+
 -Install the required dependencies:   pip install -r requirements.txt
 
-Usage
-1. Run the Streamlit app:
+Usage :1. Run the Streamlit app:
  streamlit run app.py
 
 2.Open the provided URL in your web browser to access the simulator.
