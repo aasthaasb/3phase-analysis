@@ -10,39 +10,20 @@ Features
     Real-Time Feedback: Displays simulation results in real-time for immediate analysis.
 
 Installation
-
-    Clone this repository to your local machine:
-
-    bash
-
+Clone this repository to your local machine:
 git clone https://github.com/your_username/three-phase-system-simulator.git
-
 Navigate to the project directory:
-
-bash
-
 cd three-phase-system-simulator
-
-Install the required dependencies:
-
-    pip install -r requirements.txt
+Install the required dependencies:   pip install -r requirements.txt
 
 Usage
-
-    Run the Streamlit app:
-
-    arduino
-
-    streamlit run app.py
-
-    Open the provided URL in your web browser to access the simulator.
-
-    Configure the three-phase system by selecting the connection type and adjusting the input sliders.
-
-    View the simulation results, including phase and line voltages, in real-time.
-
-    Analyze the results to verify calculations or experiment with different configurations.
+1. Run the Streamlit app:
+ streamlit run app.py
+2.Open the provided URL in your web browser to access the simulator.
+3.Configure the three-phase system by selecting the connection type and adjusting the input sliders.
+4.View the simulation results, including phase and line voltages, in real-time.
+5.Analyze the results to verify calculations or experiment with different configurations.
 
 Example
-
 Below is a screenshot of the simulator interface:
+![Simulator Interface](Screenshot 2024-05-22 153345.png)
