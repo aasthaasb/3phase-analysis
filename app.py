@@ -1,45 +1,23 @@
-import numpy as np
 import streamlit as st
 
-
-
-
-# Define functions for simulation and analysis
+# Function for simulation and analysis
 def simulate_system(connection_type, phase_voltage, phase_current, resistance, inductance, capacitance):
-    if connection_type == 'Y-Y':
-        # Calculate line currents and line voltages for Y-Y connection
-        line_voltage = phase_voltage * np.sqrt(3)
-        line_current = phase_current
-    elif connection_type == 'Y-D':
-        # Calculate line currents and line voltages for Y-D connection
-        line_voltage = phase_voltage * np.sqrt(3)
-        line_current = phase_current * np.sqrt(3)
-    elif connection_type == 'D-Y':
-        # Calculate line currents and line voltages for D-Y connection
-        line_voltage = phase_voltage
-        line_current = phase_current / np.sqrt(3)
-    elif connection_type == 'D-D':
-        # Calculate line currents and line voltages for D-D connection
-        line_voltage = phase_voltage
-        line_current = phase_current / np.sqrt(3)
-    
-    # Placeholder simulation results
+    # Simulated results placeholder
     simulation_results = {
-        'Line Voltage': line_voltage,
-        'Line Current': line_current,
+        'Line Voltage': phase_voltage * np.sqrt(3) if connection_type in ['Y-Y', 'Y-D'] else phase_voltage,
+        'Line Current': phase_current if connection_type in ['Y-Y', 'D-Y'] else phase_current * np.sqrt(3),
         'Power Factor': 0.95,
         'RMS Voltage': 220,
         'RMS Current': 10,
         'THD Voltage': 0.05,
         'THD Current': 0.1
     }
-    
     return simulation_results
 
-# Create Streamlit app
+# Streamlit app setup
 st.title('Three-Phase Power System Analysis')
 
-# Create sliders for user input
+# User input sliders
 phase_voltage = st.slider('Phase Voltage', min_value=0.0, max_value=500.0, value=230.0, step=1.0)
 phase_current = st.slider('Phase Current', min_value=0.0, max_value=50.0, value=10.0, step=0.1)
 resistance = st.slider('Resistance', min_value=0.000, max_value=100.00, value=10.00, step=0.1)
@@ -50,7 +28,15 @@ connection_type = st.selectbox('Connection Type', ['Y-Y', 'Y-D', 'D-Y', 'D-D'])
 # Simulate the system
 simulation_results = simulate_system(connection_type, phase_voltage, phase_current, resistance, inductance, capacitance)
 
-
+# Display simulation results
+st.subheader('Simulation Results')
+st.write('Line Voltage:', simulation_results['Line Voltage'])
+st.write('Line Current:', simulation_results['Line Current'])
+st.write('Power Factor:', simulation_results['Power Factor'])
+st.write('RMS Voltage:', simulation_results['RMS Voltage'])
+st.write('RMS Current:', simulation_results['RMS Current'])
+st.write('THD Voltage:', simulation_results['THD Voltage'])
+st.write('THD Current:', simulation_results['THD Current'])
 # Display advantages of three-phase current
 st.write('**Advantages of Three-Phase Current:**')
 advantages = [
