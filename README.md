@@ -26,4 +26,5 @@ Usage
 
 Example
 Below is a screenshot of the simulator interface:
-![Simulator Interface](Screenshot 2024-05-22 153345.png)
+![Simulator Interface](screenshot.png)
+
