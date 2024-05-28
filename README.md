@@ -31,4 +31,4 @@ https://3phase-analysis-asb.streamlit.app/
 
 Example
 Below is a screenshot of the simulator interface:
-![Simulator Interface](images/screenshot.png)
+![Simulator Interface](screenshot.png)
